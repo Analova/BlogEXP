@@ -1,0 +1,18 @@
+body {
+    background: pink
+}
+
+h1 {
+    color: red;
+
+}
+
+header {
+    background: red;
+    color: white
+}
+
+.logo {
+    font-size: 3rem;
+    text-align: center
+}

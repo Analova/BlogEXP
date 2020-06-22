@@ -1,8 +1,11 @@
 express = require("express");
 const app = express();
 const DB = require("../database/connection.js");
+const bodyParser = require("body-parser");
 const port = 3000;
 
+// Using body parse for post request
+app.use(bodyParser.urlencoded({ extanded: true }));
 // Routes
 const routes = require("./routes.js");
 //Static Files Folder

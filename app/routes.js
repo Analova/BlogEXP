@@ -18,8 +18,22 @@ router.get("/post/create", (req, res) => {
 
 router.post("/post/create", (req, res) => {
   const post = req.body;
-  return res.json(post);
-  return res.render("../assets/views/post/create.pug");
+  DB.query(
+    `INSERT INTO posts (title,description, image_url)
+  VALUES ("${post.title}", "${post.description}","${post.image_url}")`,
+    (error, result) => {
+      if (error) {
+        console.log("error");
+        console.log(error);
+        return res.redirect("/post/create");
+      } else {
+        return res.redirect("/");
+      }
+    }
+  );
+
+  // return res.json(post);
+  // return res.render("../assets/views/post/create.pug");
 });
 
 module.exports = router;

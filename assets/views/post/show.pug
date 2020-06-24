@@ -1,0 +1,14 @@
+extends ../layout/app
+
+block seo
+  title generic
+
+
+block content 
+    section
+      header.main
+        h1= title
+      span.image.main
+        img(src=`${image_url}`, alt='')
+      p= description 
+      hr.major 

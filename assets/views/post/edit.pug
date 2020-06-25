@@ -1,0 +1,20 @@
+extends ../layout/app
+block seo 
+   title Homepage 
+
+block content  
+   // Banner
+   section#banner
+   .content
+     form(action=`/post/${id}/edit` method="POST")
+      lable Title
+      input(type="text" name="title"
+      id="demo-name" value=`${title}` placeholder="Enter post title")
+      lable Image URL
+      input(type="text" name="image_url"
+      id="demo-name" value=`${image_url}`  placeholder="Enter image_url")
+      lable Description
+      textarea(name="description"
+      id="demo-message"  placeholder="Enter your message" rows="6")=description
+      input(type="submit" value="Send Message"
+      class="primary" )
